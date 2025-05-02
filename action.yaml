@@ -9,5 +9,5 @@ outputs:
     description: 'Whether the image exists'
     value: ${{ steps.check.outputs.result }}
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'node22'
+  main: 'dist/main.js'
