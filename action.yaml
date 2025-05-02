@@ -1,0 +1,13 @@
+name: 'Check Container Image Existence'
+description: 'Checks if a container image tag exists in its registry after logging in with docker/login-action.'
+inputs:
+  tag:
+    description: 'The full container image tag (e.g., ghcr.io/owner/image:tag)'
+    required: true
+outputs:
+  exists:
+    description: 'Whether the image exists'
+    value: ${{ steps.check.outputs.result }}
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
