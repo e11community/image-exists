@@ -7,7 +7,6 @@ inputs:
 outputs:
   exists:
     description: 'Whether the image exists'
-    value: ${{ steps.check.outputs.result }}
 runs:
   using: 'node22'
-  main: 'dist/main.js'
+  main: 'dist/index.js'
