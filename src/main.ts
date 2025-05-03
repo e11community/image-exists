@@ -14,10 +14,7 @@ async function run(): Promise<void> {
       We redirect stdout and stderr to ignore the output and only check the exit code.
       */
       await exec.exec('docker', ['manifest', 'inspect', tag], {
-        listeners: {
-          stdout: () => {},
-          stderr: () => {},
-        },
+        silent: true,
       })
       exists = true // Command succeeded, tag exists
       core.info(`Image tag ${tag} found.`)
